@@ -151,12 +151,22 @@ void Input(char user)
 
 }
 
+bool threeInRow();
+
 bool isEnd()
 {
     if(turns == 9)
     {
         return true;
     }
+
+    bool three = threeInRow();
+
+    return three;
+}
+
+bool threeInRow()
+{
 
     for(int i = 0; i < 3; i++)
     {
@@ -169,7 +179,7 @@ bool isEnd()
 
         //check cols
         char symbol2 = board[0][i];
-        if(symbol == board[1][i] && symbol == board[2][i])
+        if(symbol2 == board[1][i] && symbol2 == board[2][i])
         {
             return true;
         }
@@ -213,9 +223,9 @@ int main(){
 
     char user;
 
-    if(turns == 9)
+    if(!threeInRow())
     {
-        cout << "Cat's Game!";
+        cout << "Cat's Game!" << endl;
     }
 
     else
