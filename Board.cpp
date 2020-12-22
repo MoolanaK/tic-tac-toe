@@ -74,6 +74,29 @@ class Board
             Draw();
 
         }
+        
+        void whoWon()
+        {
+            char user;
+            if(!threeInRow())
+            {
+                cout << "Cat's Game!" << endl;
+            }
+
+            else
+            {
+                if(turns%2==0)
+                {
+                    user = 'O';
+                }
+                else
+                {
+                    user = 'X';
+                }
+
+                cout << "Player " << user << " has won the game, congrats!" << endl;
+            }
+        }
 
 
 };
